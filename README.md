@@ -5,10 +5,10 @@ Practice problems for getting started with Apache Spark
 
 
 
-1. Count of Trips
-https://github.com/ambarishHazarnis/spark-practice/blob/master/src/main/scala/probelms/trips/README.md
+1. Count of Trips :
+https://github.com/ambarishHazarnis/spark-practice/blob/master/src/main/scala/probelms/trips
 
-2. Traffic Source Distribution
+2. Traffic Source Distribution : https://github.com/ambarishHazarnis/spark-practice/tree/master/src/main/scala/probelms/trafficSource
 
 3. Handle Skew
 
