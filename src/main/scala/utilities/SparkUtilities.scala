@@ -10,6 +10,7 @@ object SparkUtilities {
 
   def  getSparkContext(appName:String):SparkContext={
     val conf = new SparkConf().setAppName(appName).setMaster("local")
+                             // .set("spark.serializer","spark.kryo.registrator")
     val sc = new SparkContext(conf)
     sc
   }
@@ -18,7 +19,9 @@ object SparkUtilities {
     val spark = SparkSession.builder()
                             .appName(appName)
                             .master("local")
+                          //  .config("spark.serializer","spark.kryo.registrator")
                             .getOrCreate()
+
     spark
   }
 

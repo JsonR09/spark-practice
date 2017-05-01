@@ -10,6 +10,8 @@ https://github.com/ambarishHazarnis/spark-practice/blob/master/src/main/scala/pr
 
 2. Traffic Source Distribution : https://github.com/ambarishHazarnis/spark-practice/tree/master/src/main/scala/probelms/trafficSource
 
-3. Handle Skew
+3. Customer Insights
 
-4. PageRank
+4. Handle Skew
+
+5. PageRank

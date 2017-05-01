@@ -1,0 +1,23 @@
+pName,pType,MaxPurchase,MaxQuantity
+Monitor,P103,745.0,5
+Camcorder,P103,1495.0,5
+Memory card,P101,95.0,5
+Camera,P104,2495.0,5
+VR Play Station,P103,995.0,5
+Keyboard,P102,495.0,5
+Speaker,P103,745.0,5
+Drone,P102,445.0,5
+Magic Mouse,P102,495.0,5
+GamingConsole,P103,1245.0,5
+Phone,P105,2995.0,5
+Doorbell Carema,P103,1095.0,5
+Car Connector,P103,1085.0,5
+Baby Monitor,P104,1745.0,5
+Laptop,P105,4995.0,5
+Home Automation Kit,P105,4995.0,5
+Watch,P104,1995.0,5
+Kids's tablet,P102,495.0,5
+Desktop,P106,7245.0,5
+Printer,P104,1745.0,5
+Harddisk,P102,495.0,5
+Tablet,P105,3495.0,5
