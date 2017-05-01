@@ -10,7 +10,7 @@ https://github.com/ambarishHazarnis/spark-practice/blob/master/src/main/scala/pr
 
 2. Traffic Source Distribution : https://github.com/ambarishHazarnis/spark-practice/tree/master/src/main/scala/probelms/trafficSource
 
-3. Customer Insights
+3. Customer Insights : https://github.com/ambarishHazarnis/spark-practice/tree/master/src/main/scala/probelms/customerInsights
 
 4. Handle Skew
 
