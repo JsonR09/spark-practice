@@ -32,11 +32,11 @@ object CIFunctions {
     IOUtilities.writeDF(maxGroupedPP,CIConstants.BASE_OUTPUT_DIR+"MaxAgg")
   }
 
-  def calcSalesAmountInYear(spark:SparkSession,salesDF:DataFrame,yearF:Int):Unit={
+  def calcSalesAmountInYear(spark:SparkSession,salesDF:DataFrame,yearFilter:Int):Unit={
     import spark.sql
     import org.apache.spark.sql.functions._
 
-    val salesInYear = salesDF.filter(sale => sale.getAs[Timestamp]("timestamp").toLocalDateTime.getYear == yearF)
+    val salesInYear = salesDF.filter(sale => sale.getAs[Timestamp]("timestamp").toLocalDateTime.getYear == yearFilter)
     salesInYear.createOrReplaceTempView("salesInYear")
 
     val salesInYearUnRefunded = sql("select * from salesInYear where tId NOT IN (select tId from refunds)")
@@ -45,12 +45,12 @@ object CIFunctions {
     IOUtilities.writeDF(salesInYearUnRefundedSum,CIConstants.BASE_OUTPUT_DIR+"UnRefundedSum")
   }
 
-  def calcSecondMostPurchase(spark:SparkSession,salesDF:DataFrame,customersDF:DataFrame,yearF:Int,monthF:Month):Unit={
+  def calcSecondMostPurchase(spark:SparkSession,salesDF:DataFrame,customersDF:DataFrame,yearFilter:Int,monthFilter:Month):Unit={
     import spark.sql
     import org.apache.spark.sql.functions._
     import spark.implicits._
 
-    val salesYearMonthFilter = salesDF.filter(sale =>  sale.getAs[Timestamp]("timestamp").toLocalDateTime.getMonth == monthF && sale.getAs[Timestamp]("timestamp").toLocalDateTime.getYear == yearF)
+    val salesYearMonthFilter = salesDF.filter(sale =>  sale.getAs[Timestamp]("timestamp").toLocalDateTime.getMonth == monthFilter && sale.getAs[Timestamp]("timestamp").toLocalDateTime.getYear == yearFilter)
     salesYearMonthFilter.createOrReplaceTempView("salesYearMonthFilter")
 
     val purchases = salesYearMonthFilter.groupBy($"cId").agg(sum($"totalAmount").as("totalPurchases")).orderBy($"totalPurchases".desc)
