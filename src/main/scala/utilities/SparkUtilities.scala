@@ -1,7 +1,10 @@
 package utilities
 
+import java.sql.Timestamp
+
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
+import probelms.customerInsights.CIConstants
 
 /**
   * Created by ahazarnis on 4/23/17.
@@ -23,6 +26,14 @@ object SparkUtilities {
                             .getOrCreate()
 
     spark
+  }
+
+  def convertCurrencyToDouble(currency:String):Double={
+    currency.stripPrefix("$").trim.toDouble
+  }
+
+  def getDate(date:String):Timestamp={
+    new java.sql.Timestamp(CIConstants.formatter.parseDateTime(date).getMillis)
   }
 
 }
